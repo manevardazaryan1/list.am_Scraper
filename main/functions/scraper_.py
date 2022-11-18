@@ -99,7 +99,7 @@ class Scraper:
                         break
                 if bool_:
                     price = list(filter(lambda span: re.findall(
-                        '֏$', span.text), price_spans))[0].text
+                        '֏', span.text), price_spans))[0].text
                     self.scrap['price'] = price
                     self.scrap['value'] = 'AMD'
 
