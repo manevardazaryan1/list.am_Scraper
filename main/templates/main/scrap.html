@@ -9,7 +9,7 @@
         <div class='container scrap'>
             <h2 class='scrap_title'>List.am information</h2>
             <a href='{% url "home" %}'>Back to page</a>
-            {% if info %}
+            {% if info.url %}
                 <div class='scrap_info' id='scrap_box'>
                     <h4><a href='{{ info.url}}' target='_blank'>{{ info.header}}</a></h4>
                     <ul>
