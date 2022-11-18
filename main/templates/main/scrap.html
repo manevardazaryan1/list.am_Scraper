@@ -17,6 +17,8 @@
                             <div class='dict'>
                                 <li class='scrap_li'><h5>{{ key }} :</h5>  <p>{{ value }} </p></li>
                             </div>
+                        {% else %}
+                            <p>{{ info }}</p>
                         {% endfor %}
                     </ul>
                 </div>
