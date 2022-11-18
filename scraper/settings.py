@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure--zmxunc=h8e@5=-#iu60at7t*m9q29071j(3wflq-&sj-a8y+v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+ALLOWED_HOSTS = ['list-am-scraper-webapp.herokuapp.com/']
+
+CSRF_TRUSTED_ORIGINS = ['https://list-am-scraper-webapp.herokuapp.com', 'https://www.list-am-scraper-webapp.herokuapp.com']
+
 ALLOWED_HOSTS = []
 
 
