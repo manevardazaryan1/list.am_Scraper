@@ -10,6 +10,7 @@
             <h2 class='scrap_title'>List.am information</h2>
             <a href='{% url "home" %}'>Back to page</a>
             {% if info.url %}
+
                 <div class='scrap_info' id='scrap_box'>
                     <h4><a href='{{ info.url}}' target='_blank'>{{ info.header}}</a></h4>
                     <ul>
@@ -20,12 +21,12 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <div class='pdf'>
+                    <button class='btn btn-dark m-2' type='button' onclick='pdf()' id='pdf'><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+                </div>
             {% else %}
                 <p>There is no information in page</p>
             {% endif %}
-            <div class='pdf'>
-                <button class='btn btn-dark m-2' type='button' onclick='pdf()' id='pdf'><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
-            </div>
         </div>
     </div>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8' crossorigin='anonymous'></script>
