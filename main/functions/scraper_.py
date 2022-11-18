@@ -99,8 +99,16 @@ class Scraper:
                         break
                 if bool_:
                     price = list(filter(lambda span: re.findall(
-                        '֏', span.text), price_spans))[0].text
-                    self.scrap['price'] = price
+                        '֏$', span.text), price_spans))[0].text
+                    
+                    price_ = list(filter(lambda span: re.findall(
+                        '֏$', span.text), price_spans))[0].text
+                    
+                    if price:
+                        self.scrap['price'] = price
+                    elif price_:
+                        self.scrap['price'] = price_
+                        
                     self.scrap['value'] = 'AMD'
 
     def get_location(self):
