@@ -30,8 +30,6 @@ ALLOWED_HOSTS = ['list-am-scraper-webapp.herokuapp.com/']
 
 CSRF_TRUSTED_ORIGINS = ['https://list-am-scraper-webapp.herokuapp.com', 'https://www.list-am-scraper-webapp.herokuapp.com']
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
