@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} List.am Scraper {% endblock %}
+{% block content %} 
+
+<!--Scraping list.am information-->
+
+    <div class='body_div'>
+    <div class='main index_main'>
+        <div class='container scrap_section'>
+            <div class='title'>
+                <h1>list.am Scraper</h1>
+            </div>
+            <h3>Write url to get information about page <a href='https://www.list.am/' class='list_url' target='_blank'>(Visit Page)</a></h3>
+            <form action='{% url "scrap" %}' method='post' class='scrap_form' id='scrap_info_box'>
+                {% csrf_token %}
+                <input class='form-control me-2'  placeholder='Get page information...' name='item_url' id='url'>
+                <button class='btn btn-dark' type='button' id='submit' onclick="scrap_function()">Get Information</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function scrap_function(){
+            var url = document.getElementById('url');
+            var btn = document.getElementById('submit')
+            if (url.value == ''){
+                btn.type = 'button'
+            }else{
+                btn.type = 'submit'
+            }
+        }
+    </script>
+    </div>
+{% endblock %}
