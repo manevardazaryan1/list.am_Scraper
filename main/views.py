@@ -7,11 +7,9 @@ import re
 
 from . functions.scraper_ import Scraper
 
-
 def index(request):
 
     return render(request, 'main/index.html')
-
 
 def scrap(request):
     item_url = ''

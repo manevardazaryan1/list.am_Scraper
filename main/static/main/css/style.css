@@ -28,6 +28,12 @@
     display: flex;
 }
 
+.scrap_li h5 {
+    display: flex;
+    min-width: max-content;
+    margin-right: 20px;
+}
+
 .scrap_form{
     justify-content: center;
     align-items: center;

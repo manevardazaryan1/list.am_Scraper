@@ -111,41 +111,6 @@ class Scraper:
 
                     self.scrap['value'] = 'AMD'
 
-    def get_location(self):
-        """Gets location"""
-
-        time.sleep(random.randint(1, 5))
-
-        location_request = requests.get('https://www.list.am/item/18294337',
-                                        params=self.params, cookies=self.cookies, headers=self.headers, verify=False)
-        html_soup_location = BeautifulSoup(location_request.text)
-
-        location = str(html_soup_location)
-
-        ll_index = location.index('ll')
-
-        scope_index = location[ll_index:].index("]")
-
-        loc = location[ll_index + 5:(ll_index + scope_index)].split(',')
-
-        lat = loc[0][1:len(loc[0])-1]
-        long = loc[1][1:len(loc[1])-1]
-
-        location__ = {}
-        location__['lat'] = lat
-        location__['long'] = long
-
-        address = self.html_soup_en.find('div', {'class': 'loc'})
-
-        if address:
-            address_link = address.find('a')
-
-            location_addr = address_link.text
-
-            location__['address'] = location_addr
-
-        self.scrap['location'] = location__
-
     def get_image(self):
         """Gets item main image"""
 
@@ -275,7 +240,6 @@ class Scraper:
         self.get_url()
         self.get_header()
         self.get_price()
-        self.get_location()
         self.get_image()
         self.get_seller_info()
         self.get_description()
